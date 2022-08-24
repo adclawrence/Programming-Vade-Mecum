@@ -25,6 +25,17 @@ sep.join(list)
 
 :strings
 
+from start to stop-1
+sting[start:stop]
+skip first n characters
+string[n:]
+only first n characters
+string[:n-1]
+skip last n characters
+string[:-n]
+only last n characters
+string[-n:]
+
 
 :dictionaries(assoc arrays)
 
