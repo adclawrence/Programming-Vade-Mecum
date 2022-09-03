@@ -1,8 +1,7 @@
 PROGRAMMING REFERENCE
 
 >Python
-:comments
-
+:Comments
 #commment rest-of-line
 
 :print
@@ -12,7 +11,18 @@ sep= #default is "\n"
 :For
 for iterator in list:
 for iterator in range(): #goes upto last-1, start 0 
+:if else
 
+equals ==
+not equals !=
+
+if condition:
+	do stuff
+	pass #placeholder
+elif condition: #elif is else if
+	do stuff
+else:
+	do stuff
 :lists
 
 list = []
@@ -27,21 +37,24 @@ sep.join(list)
 
 from start to stop-1
 sting[start:stop]
+
 skip first n characters
 string[n:]
+
 only first n characters
 string[:n-1]
+
 skip last n characters
 string[:-n]
+
 only last n characters
 string[-n:]
 
-
-:dictionaries(assoc arrays)
+:dictionaries (assoc arrays)
 
 dict = {}
 dict = {
-     	"key1": "value1",
+	"key1": "value1",
 	"key2": "value2"
 }
 dict = {"key1": "value1","key2": "value2"}
@@ -96,7 +109,7 @@ existence checks:-
 directory contents:-
 import os
 
-= os.path.listdir(path) #current dir if no path
+= os.listdir(path) #current dir if no path
 
 
 :Regex
@@ -125,7 +138,8 @@ array.forEach((item) => {
 
 >VBA
 :comments
-'comment rest of line
+'rest of line comment 
+rem all of line comment
 
 :reading files
 
@@ -153,18 +167,43 @@ arraysize = 0
 redim preserve(arraysize)
 arraysize = arraysize + 1
 
-
 :regular expressions
 
 'early binding
 Dim regex as RegExp
 set regex as New RegExp
-
 'late binding
 Dim regex as Object
 set regex as CreateObject("VBScript.RegExp")
 
+>HTML
+:entities
 
+ <	&lt;	&#60;	
+ >	&gt;	&#62;	
+ &	&amp;	&#38;	
+ "	&quot;	&#34;	
+ '	&apos;	&#39;
+
+
+>CSS
+
+:How to use
+in html <head> element
+internal CSS:-
+<style> style definitions</style>
+
+external CSS:-
+<link rel="stylesheet" href="cssfilename.css">
+external style sheet contains same style definitions as internal css
+
+:comments
+
+C style
+/* enclosed and multi-line comments */
+
+
+>VBA: Powerpoint
 :Powerpoint slide layouts
 
 see: https://docs.microsoft.com/en-us/office/vba/api/powerpoint.slide.layout
