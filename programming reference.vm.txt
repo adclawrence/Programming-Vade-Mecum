@@ -1,0 +1,289 @@
+PROGRAMMING REFERENCE
+
+>Python
+:Comments
+~
+#commment rest-of-line
+~
+
+:print
+end= #default is " "
+sep= #default is "\n"
+
+:For
+~
+for iterator in list:
+~~
+for iterator in range(): #goes upto last-1, start 0 
+~
+:if else
+
+equals ==
+not equals !=
+
+~
+if condition:
+	do stuff
+	pass #placeholder
+elif condition: #elif is else if
+	do stuff
+else:
+	do stuff
+~
+:lists
+~
+list = []
+~~
+list = ["a","b","c"]
+~
+
+list to string:
+~
+sep = ","
+~~
+sep.join(list) 
+~
+:strings
+
+from start to stop-1
+~
+sting[start:stop]
+~
+
+skip first n characters
+~
+string[n:]
+~
+
+only first n characters
+~
+string[:n-1]
+~
+
+skip last n characters
+~
+string[:-n]
+~
+
+only last n characters
+~
+string[-n:]
+~
+
+:dictionaries (assoc arrays)
+
+~
+dict = {}
+~~
+dict = {
+	"key1": "value1",
+	"key2": "value2"
+}
+~~
+dict = {"key1": "value1","key2": "value2"}
+~
+keys must be unique
+
+
+access:
+= dict[key]
+
+key exists:
+~
+if key in dict
+~
+#if dict.has_key(key) #removed from Python 3
+
+:reading files
+~
+f = open("filename","r") #"r" not needed for reading. 
+#might need: errors='ignore' or encoding='utf-8'
+~
+~
+= f.read() #read whole file
+= f.read(x)#read x characters
+= f.readline()#reads next line
+~~
+for x in f: #read file line by line
+~~
+f.close() #remember!
+~
+
+file modes:-
+"r" - Read   (Default). Opens a file for reading, error if the file does not exist
+"a" - Append - Opens a file for appending, creates the file if it does not exist
+"w" - Write - Opens a file for writing, creates the file if it does not exist
+"x" - Create - Creates the specified file, returns an error if the file exists
+
+"t" - text (default)
+"b" - binary
+
+:writing files
+~
+f = open(filename,"w") #will replace existing file of same name
+~~
+f = open(filename,"a") #creates filename  if not exist
+~
+~
+f.write(stuff)
+~~
+f.writelines(listofstuff)
+~~
+print("stuff",file=f)
+~
+~
+f.close #remember
+~
+:files
+~
+import os
+~
+existence checks:-
+= os.path.exists(pathfile)
+= os.path.isdir(path)
+= os.path.isfile(filename)
+
+directory contents:-
+~
+import os
+~
+= os.listdir(path) #current dir if no path
+
+
+:Regex
+~
+import re
+~
+to test:
+= re.search(regex,text)
+
+>Javascript
+:comments
+C/C++ style
+~
+/* span and multi-line comment */
+~~
+//rest of line is comment
+~
+:if else
+~
+if (condition) {
+	//stuff
+} else if (condition2) {
+	//stuff
+} else {
+	//stuff
+}
+~
+
+:arrays
+~
+array = [];
+~~
+array = [item1, item2, etc];
+~
+~
+array[idx] = item
+~
+note:-
+arrays start at array[0]
+
+:for
+C style
+~
+for (idx in array){
+	//item = array[idx] 
+}
+:foreach
+for (item of array){ //seems best method
+	code block;
+}
+~
+
+~
+array.forEach((item) => code statement); //no break in forEach
+array.forEach((item) => {
+	code block;
+});
+~
+>VBA
+:comments
+~
+'rest of line comment 
+~~
+rem all of line comment
+~
+
+:reading files
+~
+open "filename" for input as #1
+until eof(1)
+while not eof(1)
+line input #1, textline
+close #1
+~
+:writing files
+~
+open "filename" for output as #1
+write #1, textline
+print #1, textline 'normally use this
+close #1
+~
+note:-
+"write" encloses fields with double quotes ""
+"print" does not  
+; at end to suppress automatic newline
+
+:appending arrays
+
+~
+dim arrayname () as ~ 'any type
+arraysize = 0
+redim preserve(arraysize)
+arraysize = arraysize + 1
+~
+
+:regular expressions
+
+'early binding
+~
+Dim regex as RegExp
+set regex as New RegExp
+~
+~
+'late binding
+Dim regex as Object
+set regex as CreateObject("VBScript.RegExp")
+~
+
+>HTML
+:entities
+
+ <	&lt;	&#60;	
+ >	&gt;	&#62;	
+ &	&amp;	&#38;	
+ "	&quot;	&#34;	
+ '	&apos;	&#39;
+
+
+>CSS
+
+:How to use
+in html <head> element
+internal CSS:-
+~
+<style> style definitions</style>
+~
+
+external CSS:-
+~
+<link rel="stylesheet" href="cssfilename.css">
+~
+external style sheet contains same style definitions as internal css
+
+:comments
+
+C style
+~
+/* enclosed and multi-line comments */
+~
