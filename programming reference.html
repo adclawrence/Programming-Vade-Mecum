@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>vade mecum</title>
+<style>
+body{
+	font-family: Verdana, Helvetica, sans-serif;
+	white-space: pre-wrap;
+	color:white; 
+	background-color:black;
+}
+
+h1{
+	text-align: center;
+}
+h2{
+	color:black;
+	background-color:cyan;
+}
+
+code{
+	white-space: pre;
+	font-family: "Lucida Console", "Courier New", monospace; 
+	color:yellow; 
+	background-color:navy;
+}
+
+</style>
+</head>
+<body>
+<h1 id="id0">PROGRAMMING REFERENCE</h1>
+
+<h2 id="id1">Python</h2>
+<h3 id="id2">Comments</h3>
+<code>
+#commment rest-of-line
+</code>
+
+<h3 id="id3">print</h3>
+end= #default is " "
+sep= #default is "\n"
+
+<h3 id="id4">For</h3>
+<code>
+for iterator in list:
+</code><code>
+for iterator in range(): #goes upto last-1, start 0 
+</code>
+<h3 id="id5">if else</h3>
+
+equals ==
+not equals !=
+
+<code>
+if condition:
+	do stuff
+	pass #placeholder
+elif condition: #elif is else if
+	do stuff
+else:
+	do stuff
+</code>
+<h3 id="id6">lists</h3>
+<code>
+list = []
+</code><code>
+list = ["a","b","c"]
+</code>
+
+list to string:
+<code>
+sep = ","
+</code><code>
+sep.join(list) 
+</code>
+<h3 id="id7">strings</h3>
+
+from start to stop-1
+<code>
+sting[start:stop]
+</code>
+
+skip first n characters
+<code>
+string[n:]
+</code>
+
+only first n characters
+<code>
+string[:n-1]
+</code>
+
+skip last n characters
+<code>
+string[:-n]
+</code>
+
+only last n characters
+<code>
+string[-n:]
+</code>
+
+<h3 id="id8">dictionaries (assoc arrays)</h3>
+
+<code>
+dict = {}
+</code><code>
+dict = {
+	"key1": "value1",
+	"key2": "value2"
+}
+</code><code>
+dict = {"key1": "value1","key2": "value2"}
+</code>
+keys must be unique
+
+
+access:
+= dict[key]
+
+key exists:
+<code>
+if key in dict
+</code>
+#if dict.has_key(key) #removed from Python 3
+
+<h3 id="id9">reading files</h3>
+<code>
+f = open("filename","r") #"r" not needed for reading. 
+#might need: errors='ignore' or encoding='utf-8'
+</code>
+<code>
+= f.read() #read whole file
+= f.read(x)#read x characters
+= f.readline()#reads next line
+</code><code>
+for x in f: #read file line by line
+</code><code>
+f.close() #remember!
+</code>
+
+file modes:-
+"r" - Read   (Default). Opens a file for reading, error if the file does not exist
+"a" - Append - Opens a file for appending, creates the file if it does not exist
+"w" - Write - Opens a file for writing, creates the file if it does not exist
+"x" - Create - Creates the specified file, returns an error if the file exists
+
+"t" - text (default)
+"b" - binary
+
+<h3 id="id10">writing files</h3>
+<code>
+f = open(filename,"w") #will replace existing file of same name
+</code><code>
+f = open(filename,"a") #creates filename  if not exist
+</code>
+<code>
+f.write(stuff)
+</code><code>
+f.writelines(listofstuff)
+</code><code>
+print("stuff",file=f)
+</code>
+<code>
+f.close #remember
+</code>
+<h3 id="id11">files</h3>
+<code>
+import os
+</code>
+existence checks:-
+= os.path.exists(pathfile)
+= os.path.isdir(path)
+= os.path.isfile(filename)
+
+directory contents:-
+<code>
+import os
+</code>
+= os.listdir(path) #current dir if no path
+
+
+<h3 id="id12">Regex</h3>
+<code>
+import re
+</code>
+to test:
+= re.search(regex,text)
+
+<h2 id="id13">Javascript</h2>
+<h3 id="id14">comments</h3>
+C/C++ style
+<code>
+/* span and multi-line comment */
+</code><code>
+//rest of line is comment
+</code>
+<h3 id="id15">if else</h3>
+<code>
+if (condition) {
+	//stuff
+} else if (condition2) {
+	//stuff
+} else {
+	//stuff
+}
+</code>
+
+<h3 id="id16">arrays</h3>
+<code>
+array = [];
+</code><code>
+array = [item1, item2, etc];
+</code>
+<code>
+array[idx] = item
+</code>
+note:-
+arrays start at array[0]
+
+<h3 id="id17">for</h3>
+C style
+<code>
+for (idx in array){
+	//item = array[idx] 
+}
+<h3 id="id18">foreach</h3>
+for (item of array){ //seems best method
+	code block;
+}
+</code>
+
+<code>
+array.forEach((item) =&gt; code statement); //no break in forEach
+array.forEach((item) =&gt; {
+	code block;
+});
+</code>
+<h2 id="id19">VBA</h2>
+<h3 id="id20">comments</h3>
+<code>
+'rest of line comment 
+</code><code>
+rem all of line comment
+</code>
+
+<h3 id="id21">reading files</h3>
+<code>
+open "filename" for input as #1
+until eof(1)
+while not eof(1)
+line input #1, textline
+close #1
+</code>
+<h3 id="id22">writing files</h3>
+<code>
+open "filename" for output as #1
+write #1, textline
+print #1, textline 'normally use this
+close #1
+</code>
+note:-
+"write" encloses fields with double quotes ""
+"print" does not  
+; at end to suppress automatic newline
+
+<h3 id="id23">appending arrays</h3>
+
+<code>
+dim arrayname () as ~ 'any type
+arraysize = 0
+redim preserve(arraysize)
+arraysize = arraysize + 1
+</code>
+
+<h3 id="id24">regular expressions</h3>
+
+'early binding
+<code>
+Dim regex as RegExp
+set regex as New RegExp
+</code>
+<code>
+'late binding
+Dim regex as Object
+set regex as CreateObject("VBScript.RegExp")
+</code>
+
+<h2 id="id25">HTML</h2>
+<h3 id="id26">entities</h3>
+
+ &lt;	&amp;lt;	&amp;#60;	
+ &gt;	&amp;gt;	&amp;#62;	
+ &amp;	&amp;amp;	&amp;#38;	
+ "	&amp;quot;	&amp;#34;	
+ '	&amp;apos;	&amp;#39;
+
+
+<h2 id="id27">CSS</h2>
+
+<h3 id="id28">How to use</h3>
+in html &lt;head&gt; element
+internal CSS:-
+<code>
+&lt;style&gt; style definitions&lt;/style&gt;
+</code>
+
+external CSS:-
+<code>
+&lt;link rel="stylesheet" href="cssfilename.css"&gt;
+</code>
+external style sheet contains same style definitions as internal css
+
+<h3 id="id29">comments</h3>
+
+C style
+<code>
+/* enclosed and multi-line comments */
+</code>
+
+</body>
+</head>
