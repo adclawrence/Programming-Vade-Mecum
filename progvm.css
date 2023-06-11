@@ -1,0 +1,21 @@
+body{
+	font-family: Verdana, Helvetica, sans-serif;
+	white-space: pre-wrap;
+	color:white; 
+	background-color:black;
+}
+
+h1{
+	text-align: center;
+}
+h2{
+	color:black;
+	background-color:cyan;
+}
+
+code{
+	white-space: pre;
+	font-family: "Lucida Console", "Courier New", monospace; 
+	color:yellow; 
+	background-color:navy;
+}
