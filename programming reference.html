@@ -12,10 +12,16 @@ body{
 
 h1{
 	text-align: center;
+	background-color: black;
+	color: white;
 }
 h2{
 	color:black;
 	background-color:cyan;
+}
+
+h3{
+	background-color:brown;
 }
 
 code{
@@ -25,10 +31,59 @@ code{
 	background-color:navy;
 }
 
+.nav{
+	white-space: normal;
+	background-color: Maroon;
+	color: white;
+	/*position: fixed;
+	top: 0px;
+	right: 0px;
+	bottom: 0px*/
+}
+a:link, a:visited{ color:cyan;}
+a:hover{ color:yellow; background-color:black;}
 </style>
 </head>
 <body>
+<span class="nav">
 <h1 id="id0">PROGRAMMING REFERENCE</h1>
+<strong>Python</strong>: 
+<a href="#id2">Comments</a>
+<a href="#id3">print</a>
+<a href="#id4">For</a>
+<a href="#id5">if else</a>
+<a href="#id6">lists</a>
+<a href="#id7">strings</a>
+<a href="#id8">string formatting</a>
+<a href="#id9">dictionaries (assoc arrays)</a>
+<a href="#id10">reading files</a>
+<a href="#id11">writing files</a>
+<a href="#id12">deleting files</a>
+<a href="#id13">files</a>
+<a href="#id14">Regex</a>
+<br>
+<strong>Javascript</strong>: 
+<a href="#id16">comments</a>
+<a href="#id17">if else</a>
+<a href="#id18">arrays</a>
+<a href="#id19">for</a>
+<a href="#id20">foreach</a>
+<br>
+<strong>VBA</strong>: 
+<a href="#id22">comments</a>
+<a href="#id23">reading files</a>
+<a href="#id24">writing files</a>
+<a href="#id25">appending arrays</a>
+<a href="#id26">regular expressions</a>
+<br>
+<strong>HTML</strong>: 
+<a href="#id28">entities</a>
+<br>
+<strong>CSS</strong>: 
+<a href="#id30">How to use</a>
+<a href="#id31">comments</a>
+<br>
+</span>
 
 <h2 id="id1">Python</h2>
 <h3 id="id2">Comments</h3>
@@ -100,7 +155,17 @@ only last n characters
 string[-n:]
 </code>
 
-<h3 id="id8">dictionaries (assoc arrays)</h3>
+<h3 id="id8">string formatting</h3>
+<code>
+f"{variable}"
+</code>
+or
+<code>
+f'{variable}'
+</code>
+to include braces in f-string use {{ and }}
+
+<h3 id="id9">dictionaries (assoc arrays)</h3>
 
 <code>
 dict = {}
@@ -124,7 +189,7 @@ if key in dict
 </code>
 #if dict.has_key(key) #removed from Python 3
 
-<h3 id="id9">reading files</h3>
+<h3 id="id10">reading files</h3>
 <code>
 f = open("filename","r") #"r" not needed for reading. 
 #might need: errors='ignore' or encoding='utf-8'
@@ -148,7 +213,7 @@ file modes:-
 "t" - text (default)
 "b" - binary
 
-<h3 id="id10">writing files</h3>
+<h3 id="id11">writing files</h3>
 <code>
 f = open(filename,"w") #will replace existing file of same name
 </code><code>
@@ -164,7 +229,14 @@ print("stuff",file=f)
 <code>
 f.close #remember
 </code>
-<h3 id="id11">files</h3>
+<h3 id="id12">deleting files</h3>
+<code>
+import os
+
+os.remove(filename)
+</code>
+
+<h3 id="id13">files</h3>
 <code>
 import os
 </code>
@@ -180,22 +252,22 @@ import os
 = os.listdir(path) #current dir if no path
 
 
-<h3 id="id12">Regex</h3>
+<h3 id="id14">Regex</h3>
 <code>
 import re
 </code>
 to test:
 = re.search(regex,text)
 
-<h2 id="id13">Javascript</h2>
-<h3 id="id14">comments</h3>
+<h2 id="id15">Javascript</h2>
+<h3 id="id16">comments</h3>
 C/C++ style
 <code>
 /* span and multi-line comment */
 </code><code>
 //rest of line is comment
 </code>
-<h3 id="id15">if else</h3>
+<h3 id="id17">if else</h3>
 <code>
 if (condition) {
 	//stuff
@@ -206,7 +278,7 @@ if (condition) {
 }
 </code>
 
-<h3 id="id16">arrays</h3>
+<h3 id="id18">arrays</h3>
 <code>
 array = [];
 </code><code>
@@ -218,17 +290,18 @@ array[idx] = item
 note:-
 arrays start at array[0]
 
-<h3 id="id17">for</h3>
+<h3 id="id19">for</h3>
 C style
 <code>
 for (idx in array){
 	//item = array[idx] 
 }
-<h3 id="id18">foreach</h3>
+</code>
+<h3 id="id20">foreach</h3>
 for (item of array){ //seems best method
 	code block;
 }
-</code>
+
 
 <code>
 array.forEach((item) =&gt; code statement); //no break in forEach
@@ -236,15 +309,15 @@ array.forEach((item) =&gt; {
 	code block;
 });
 </code>
-<h2 id="id19">VBA</h2>
-<h3 id="id20">comments</h3>
+<h2 id="id21">VBA</h2>
+<h3 id="id22">comments</h3>
 <code>
 'rest of line comment 
 </code><code>
 rem all of line comment
 </code>
 
-<h3 id="id21">reading files</h3>
+<h3 id="id23">reading files</h3>
 <code>
 open "filename" for input as #1
 until eof(1)
@@ -252,7 +325,7 @@ while not eof(1)
 line input #1, textline
 close #1
 </code>
-<h3 id="id22">writing files</h3>
+<h3 id="id24">writing files</h3>
 <code>
 open "filename" for output as #1
 write #1, textline
@@ -264,7 +337,7 @@ note:-
 "print" does not  
 ; at end to suppress automatic newline
 
-<h3 id="id23">appending arrays</h3>
+<h3 id="id25">appending arrays</h3>
 
 <code>
 dim arrayname () as ~ 'any type
@@ -273,7 +346,7 @@ redim preserve(arraysize)
 arraysize = arraysize + 1
 </code>
 
-<h3 id="id24">regular expressions</h3>
+<h3 id="id26">regular expressions</h3>
 
 'early binding
 <code>
@@ -286,8 +359,8 @@ Dim regex as Object
 set regex as CreateObject("VBScript.RegExp")
 </code>
 
-<h2 id="id25">HTML</h2>
-<h3 id="id26">entities</h3>
+<h2 id="id27">HTML</h2>
+<h3 id="id28">entities</h3>
 
  &lt;	&amp;lt;	&amp;#60;	
  &gt;	&amp;gt;	&amp;#62;	
@@ -296,9 +369,9 @@ set regex as CreateObject("VBScript.RegExp")
  '	&amp;apos;	&amp;#39;
 
 
-<h2 id="id27">CSS</h2>
+<h2 id="id29">CSS</h2>
 
-<h3 id="id28">How to use</h3>
+<h3 id="id30">How to use</h3>
 in html &lt;head&gt; element
 internal CSS:-
 <code>
@@ -311,7 +384,7 @@ external CSS:-
 </code>
 external style sheet contains same style definitions as internal css
 
-<h3 id="id29">comments</h3>
+<h3 id="id31">comments</h3>
 
 C style
 <code>
