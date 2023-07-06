@@ -7,10 +7,17 @@ body{
 
 h1{
 	text-align: center;
+	background-color: navy;
+	color: white;
+	font-weight:  bold;
 }
 h2{
 	color:black;
 	background-color:cyan;
+}
+
+h3{
+	background-color:brown;
 }
 
 code{
@@ -18,4 +25,22 @@ code{
 	font-family: "Lucida Console", "Courier New", monospace; 
 	color:yellow; 
 	background-color:navy;
+}
+
+.nav{
+	white-space: normal;
+	background-color: Maroon;
+	color: white;
+	position: fixed;
+	top: 0px;
+	/*right: 0px;
+	bottom: 0px*/
+}
+
+a:link, a:visited{ color:cyan;}
+a:hover{ color:yellow; background-color:black;}
+
+.main{
+	margin-top:150px;
+	border-style: solid;
 }

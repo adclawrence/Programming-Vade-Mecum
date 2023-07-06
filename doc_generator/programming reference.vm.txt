@@ -2,6 +2,7 @@ PROGRAMMING REFERENCE
 
 >Python
 :Comments
+Perl style
 ~
 #commment rest-of-line
 ~
@@ -70,6 +71,16 @@ only last n characters
 string[-n:]
 ~
 
+:string formatting
+~
+f"{variable}"
+~
+or
+~
+f'{variable}'
+~
+to include braces in f-string use {{ and }}
+
 :dictionaries (assoc arrays)
 
 ~
@@ -134,7 +145,14 @@ print("stuff",file=f)
 ~
 f.close #remember
 ~
-:files
+:deleting files
+~
+import os
+
+os.remove(filename)
+~
+
+:checking files
 ~
 import os
 ~
@@ -194,11 +212,12 @@ C style
 for (idx in array){
 	//item = array[idx] 
 }
+~
 :foreach
 for (item of array){ //seems best method
 	code block;
 }
-~
+
 
 ~
 array.forEach((item) => code statement); //no break in forEach
@@ -281,9 +300,31 @@ external CSS:-
 ~
 external style sheet contains same style definitions as internal css
 
-:comments
+:Comments
 
 C style
 ~
 /* enclosed and multi-line comments */
+~
+
+:Text Styles
+bold
+~
+font-weight:bold;
+~
+italic
+~
+font-style:italic;
+~
+small capitals
+~
+font-variant:small-caps;
+~
+underline
+~
+font-decoration:underline:
+~
+crossed out/strikethrough
+~
+font-decoration:line-throught;
 ~
